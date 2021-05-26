@@ -13,8 +13,21 @@ class Solution:
             return head
             
     def iterative_reverse(self, head: ListNode) -> ListNode:
-        pass
+        previous = None
+        current = head
+        following = head.next
+        
+        while current:
+            current.next = previous
+            previous = current
+            current = following
+            if following:
+                following = following.next
+        
+        return previous
         
     def reverseList(self, head: ListNode) -> ListNode:
         if not head: return ListNode().next
-        return self.recursive_reverse(head)
+        
+        # return self.recursive_reverse(head)
+        return self.iterative_reverse(head)
