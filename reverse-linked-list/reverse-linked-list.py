@@ -27,7 +27,7 @@ class Solution:
         return previous
         
     def reverseList(self, head: ListNode) -> ListNode:
-        if not head: return ListNode().next
+        if not head: return ListNode().next # feels dirty again
         
         # return self.recursive_reverse(head)
         return self.iterative_reverse(head)
