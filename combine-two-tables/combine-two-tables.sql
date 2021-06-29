@@ -6,4 +6,3 @@ LEFT OUTER JOIN
     Address
 ON
     Person.PersonId=Address.PersonId
-;
