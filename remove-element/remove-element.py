@@ -5,5 +5,4 @@ class Solution:
             if nums[i] == val:
                 del nums[i]
         
-        # no need to pad the list, just return k
         return len(nums)
