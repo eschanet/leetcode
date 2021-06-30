@@ -6,5 +6,4 @@ class Solution:
         while abs(guess*guess - x) > 0.1:
             guess = (guess + x/guess) / 2
         
-        print(guess)
         return int(guess)
