@@ -11,6 +11,7 @@ class Solution:
     
 
     def isValid_regex(self, s: str) -> bool:
+        
         import re
         replacements = {"\{\}": "", "\[\]": "", "\(\)": "",}
         pattern = re.compile("|".join(replacements.keys()))
