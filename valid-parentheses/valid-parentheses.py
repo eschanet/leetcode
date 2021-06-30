@@ -1,25 +1,27 @@
 class Solution:
+    def isValid_replacements(self, s: str) -> bool:       
+        while '()' in s or '[]' in s or '{}' in s:
+            s = s.replace('()','').replace('[]','').replace('{}','')            
+        return s == ''
+
+    def isValid_stack(self, s: str) -> bool:       
+        stack = []
+        hashmap = {
+            ")":"(",
+            "}":"{",
+            "]":"[",
+        }
+        
+        for c in s:
+            if c in hashmap:
+                if stack and stack[-1] == hashmap[c]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(c)
+        
+        return len(stack) == 0
+
     def isValid(self, s: str) -> bool:
-                           
-        old = ""
-        while old != s:
-            old = s
-            s = s.replace('()','').replace('[]','').replace('{}','')
-            
-        if len(s) == 0: return True
-        return False
-    
-
-    def isValid_regex(self, s: str) -> bool:
-        
-        import re
-        replacements = {"\{\}": "", "\[\]": "", "\(\)": "",}
-        pattern = re.compile("|".join(replacements.keys()))
-        
-        old = ""
-        while old != s:
-            old = s
-            s = pattern.sub(lambda m: replacements[re.escape(m.group(0))], old)
-
-        if len(s) == 0: return True
-        return False
+        return self.isValid_stack(s)
