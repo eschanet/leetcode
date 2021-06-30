@@ -5,7 +5,7 @@ class Solution:
         while abs(guess*guess - num) > 0.1:
             guess = (guess + num/guess) / 2
         
-        if (int(guess)*int(guess) == num) or (int(guess+1)*int(guess+1) == num):
+        if (int(guess)*int(guess) == num):
             return True
     
         return False
