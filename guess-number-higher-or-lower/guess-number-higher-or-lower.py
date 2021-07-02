@@ -4,13 +4,9 @@
 # def guess(num: int) -> int:
 
 class Solution:
-    def guessNumber(self, n: int) -> int:
-        
-        if guess(n) == 0 : return n
-        
+    def guessNumber(self, n: int) -> int:            
         start, stop = 1, n
         mid = (start + stop) // 2
-        
         g = guess(mid)
         
         while g != 0:
@@ -20,11 +16,8 @@ class Solution:
                 start, stop = mid+1, stop
             elif g == -1:
                 start, stop = start, mid
-            else:
-                break
         
             mid = (start + stop) // 2
             g = guess(mid)
-            
-            
+                    
         return mid
