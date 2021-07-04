@@ -3,7 +3,7 @@ class Solution:
             
         meme = {}
 
-        def get_fib(n: int) -> int:
+        def fib_recur(n: int) -> int:
             if n in meme:
                 return meme[n]
             if n == 0:
@@ -15,4 +15,13 @@ class Solution:
             meme[n] = res
             return res
         
-        return get_fib(n)
+        def fib_bottomup(n: int) -> int:
+            meme[0] = 0
+            meme[1] = 1
+            
+            for i in range(2, n+1):
+                meme[i] = meme[i-1] + meme[i-2]
+            
+            return meme[n]
+        
+        return fib_bottomup(n)
