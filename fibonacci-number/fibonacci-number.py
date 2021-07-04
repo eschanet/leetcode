@@ -1,8 +1,7 @@
 class Solution:
     def fib(self, n: int) -> int:
-            
         meme = {}
-
+        
         def fib_recur(n: int) -> int:
             if n in meme:
                 return meme[n]
@@ -16,12 +15,9 @@ class Solution:
             return res
         
         def fib_bottomup(n: int) -> int:
-            meme[0] = 0
-            meme[1] = 1
-            
+            meme[0], meme[1] = 0, 1
             for i in range(2, n+1):
-                meme[i] = meme[i-1] + meme[i-2]
-            
+                meme[i] = meme[i-1] + meme[i-2] 
             return meme[n]
         
         return fib_bottomup(n)
