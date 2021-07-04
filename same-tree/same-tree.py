@@ -41,5 +41,5 @@ class Solution:
             
             return True
         
-        # return same_tree_iterative(p, q)        
-        return same_tree_recursive(p, q)
+        return same_tree_iterative(p, q)        
+        # return same_tree_recursive(p, q)
