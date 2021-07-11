@@ -8,6 +8,7 @@ class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
         
         def left_right_symmetric(left: TreeNode, right: TreeNode) -> bool:
+            
             if not left and not right:
                 return True
             elif not left or not right:
