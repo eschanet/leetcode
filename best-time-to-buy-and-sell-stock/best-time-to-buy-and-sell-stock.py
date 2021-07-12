@@ -3,7 +3,9 @@ class Solution:
         min_price, max_profit = prices[0], 0
         
         for curr_price in prices:
-            min_price = min(min_price, curr_price)
-            max_profit = max(curr_price - min_price, max_profit)
+            if curr_price < min_price:
+                min_price = curr_price
+            elif curr_price - min_price > max_profit:
+                max_profit = curr_price - min_price
             
         return max_profit
