@@ -3,31 +3,12 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        sorted_array = []
-        m += n
-        number_zeros = n
-        
-        if n == 0:
-            m = 0
-            sorted_array = nums1
-        
-        while n > 0 or m > number_zeros: # TODO: think about this condition
-            print(m,n)
-            
-            if m > number_zeros:
-                if n > 0:
-                    if nums1[-m] <= nums2[-n]:
-                        sorted_array.append(nums1[-m])
-                        m -= 1
-                    else:
-                        sorted_array.append(nums2[-n])
-                        n -= 1
-                else:
-                    sorted_array.append(nums1[-m])
-                    m -= 1                    
+        while m > 0 and n > 0:
+            if nums1[m-1] >= nums2[n-1]:
+                nums1[m+n-1] = nums1[m-1]
+                m -= 1
             else:
-                sorted_array.append(nums2[-n])
+                nums1[m+n-1] = nums2[n-1]
                 n -= 1
-            print(m,n)
-        
-        nums1[:] = sorted_array
+        if n > 0:
+            nums1[:n] = nums2[:n]
