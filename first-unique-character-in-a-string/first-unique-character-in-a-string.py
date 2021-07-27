@@ -1,12 +1,14 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        memo = {}
+        # memo = {}
         
-        for c in s:
-            if c in memo:
-                memo[c] += 1
-            else:
-                memo[c] = 1
+        # for c in s:
+        #     if c in memo:
+        #         memo[c] += 1
+        #     else:
+        #         memo[c] = 1
+        
+        memo = collections.Counter(s)
                 
         for i,c in enumerate(s):
             if memo[c] == 1:
