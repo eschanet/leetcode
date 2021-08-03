@@ -1,4 +1,3 @@
-# Write your MySQL query statement below
 DELETE person1 FROM Person person1,
     Person person2
 WHERE
